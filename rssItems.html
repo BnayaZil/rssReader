@@ -1,0 +1,6 @@
+<div class="rssPost col-xs-12 bs-callout bs-callout-primary" ng-repeat="(key, data) in rssCurrentItem">
+<!-- <div class="rssPost col-xs-12 bs-callout bs-callout-primary" ng-repeat="(key, data) in rssCurrentItem track by data.link"> -->
+	<h4><a ng-href="{{data.link}}">{{data.title}}</a></h4>
+	{{data.contentSnippet}}
+	<div class="col-xs-12 noPad">{{data.publishedDate}}</div>
+</div>

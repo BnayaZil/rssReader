@@ -1,0 +1,32 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="all.js"></script>
+	<!-- <script src="js/app.js"></script>
+	<script src="js/rssMainCtrl.js"></script>
+	<script src="js/rssItemsDir.js"></script>
+	<script src="js/readRssSer.js"></script>
+	<script src="js/localstorageSer.js"></script>
+	<script src="js/bodyCtrl.js"></script> -->
+	<link rel="stylesheet" href="style.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body ng-app="rssReader" ng-controller="rssMain">
+	<div class="rssLink">
+		<div class="sidebar col-xs-4">
+			<div class="inputWrapper col-xs-10"><input type="text" ng-model="url" class="form-control"></div>
+			<div class="rsslinkBtn btn btn-primary col-xs-2" ng-click="submit()">SEND</div>
+			<div class="col-xs-12 error bg-warning" ng-if="error" ng-bind="error"></div>
+			<div class="rssItem col-xs-12  btn btn-default text-left" ng-repeat="(key, data) in rssList track by data.feed.feedUrl" ng-click="switchCurrent(key)">
+				title: {{data.feed.title}} <br>
+				link: {{data.feed.feedUrl}}
+				<i ng-click="remove(key)">X</i>
+			</div>
+		</div>
+		<div class="rssBody col-xs-8 noPad">
+			<div ui-view></div>
+		</div>
+	</div>
+</body>
+</html>
