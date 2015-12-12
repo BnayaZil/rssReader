@@ -1,0 +1,2 @@
+# rssReader
+Angular Rss-Reader
