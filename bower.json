@@ -1,0 +1,14 @@
+{
+  "name": "rssReader",
+  "homepage": "https://github.com/BnayaZil/rssReader",
+  "authors": [
+    "Bnaya <bnayaZil@gmail.com>"
+  ],
+  "description": "Angular Rss-Reader",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "dependencies": {
+    "angular-ui-router": "~0.2.15"
+  }
+}
