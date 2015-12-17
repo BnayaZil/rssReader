@@ -1,0 +1,10 @@
+<div class="sidebar col-xs-4">
+	<div class="inputWrapper col-xs-10"><input type="text" ng-model="sidebar.url" class="form-control"></div>
+	<div class="rsslinkBtn btn btn-primary col-xs-2" ng-click="sidebar.submit()">SEND</div>
+	<div class="col-xs-12 error bg-warning" ng-if="sidebar.error" ng-bind="sidebar.error"></div>
+	<div class="rssItem col-xs-12  btn btn-default text-left" ng-repeat="(key, data) in sidebar.rssList track by data.feed.feedUrl" ng-click="sidebar.switchCurrent(key)">
+		title: {{data.feed.title}} <br>
+		link: {{data.feed.feedUrl}}
+		<i ng-click="sidebar.remove(key)">X</i>
+	</div>
+</div>
